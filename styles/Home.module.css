@@ -150,6 +150,8 @@
   max-width: 1200px;
   min-width: 50%;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .form input{
