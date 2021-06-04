@@ -6,12 +6,13 @@ import Image from 'next/image'
 
 export default function Home() {
   const [raffle, setRaffle] = useState();
-  const [win, setWin] = useState(false);
+
 
   const raffleNames = async event => {
     event.preventDefault()
 
-    const names = event.target.list.value.split(',')
+    let names = event.target.list.value.split(',')
+    names = ['lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo']
     const totalNames  = names.length;
 
     const raffleList = []
@@ -59,13 +60,14 @@ export default function Home() {
 
         <p className={styles.description}>
           
-          <code className={styles.code}><a href="https://www.twitch.tv/r0bmais">r0bmais</a></code>
+          <code className={styles.code}>
+          
+            <a href="https://www.twitch.tv/r0bmais">r0bmais</a></code>
         </p>
 
         
-        <FadeIn className={styles.grid} childTag="a" childClassName={win ? styles.cardwin : styles.removed} delay={2000}>
-            {raffle ? raffle.map((person, index) => {
-               
+        <FadeIn className={styles.grid} childTag="a" childClassName={styles.removed} delay={2000}>
+            {raffle ? raffle.map((person, index) => {            
               return (
                   <span className={person.quantity === 1 ? styles.cardwin : styles.cardloser} key={index}>
                     <p>{person.quantity === 1 ? 'Ganhador' : 'Removido'}</p>
