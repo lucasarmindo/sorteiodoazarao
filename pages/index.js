@@ -12,7 +12,7 @@ export default function Home() {
     event.preventDefault()
 
     let names = event.target.list.value.split(',')
-    names = ['lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo','lucasarmindo']
+    
     const totalNames  = names.length;
 
     const raffleList = []
